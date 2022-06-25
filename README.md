@@ -30,6 +30,14 @@ load_system_exe(
 )
 ```
 
+Then in any source directory you want to check:
+
+```
+load("@com_github_micahcc_bazel_clang_tidy//clang_tidy:clang_tidy.bzl", "clang_tidy")
+
+clang_tidy()
+```
+
 You can now run clang tidy check with build
 
 ```
