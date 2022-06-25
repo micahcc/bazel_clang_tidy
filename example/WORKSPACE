@@ -1,4 +1,15 @@
 local_repository(
-    name = "bazel_clang_tidy",
+    name = "com_github_micahcc_bazel_clang_tidy",
     path = "../",
+)
+
+load("@com_github_micahcc_bazel_clang_tidy//system:load_system.bzl", "load_system_exe")
+
+load_system_exe(
+    name = "sys",
+    execs = {
+        "diff": "diff",
+        "clang-tidy": "clang-tidy-12",
+        "clang-apply-replacements": "clang-apply-replacements-12",
+    },
 )

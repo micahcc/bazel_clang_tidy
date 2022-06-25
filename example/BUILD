@@ -1,5 +1,5 @@
 load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
-load("@bazel_clang_tidy//clang_tidy:clang_tidy.bzl", "clang_tidy_rule")
+load("@com_github_micahcc_bazel_clang_tidy//clang_tidy:clang_tidy.bzl", "clang_tidy")
 
 cc_library(
     name = "lib",
@@ -13,8 +13,4 @@ cc_binary(
     deps = [":lib"],
 )
 
-clang_tidy_rule(
-    name = "file_count",
-    extension = "h",
-    deps = ["example"],
-)
+clang_tidy()

@@ -1,0 +1,6 @@
+package(default_visibility = ["//visibility:public"])
+
+[sh_binary(
+    name = name,
+    srcs = [path],
+) for name, path in %{pairs}]
